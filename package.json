@@ -1,0 +1,29 @@
+{
+  "name": "tantrshell",
+  "version": "1.0.0",
+  "description": "TantrShell - Smart Tech. Ready to Deploy.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "tantrshell",
+    "tech",
+    "startup",
+    "digital-solutions"
+  ],
+  "author": "TantrShell",
+  "license": "ISC",
+  "dependencies": {
+    "@types/three": "^0.183.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "gsap": "^3.14.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.1",
+    "three": "^0.183.2",
+    "vite": "^8.0.6"
+  }
+}
