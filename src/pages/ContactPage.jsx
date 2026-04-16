@@ -1,17 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-// ============================================
-// EmailJS Configuration
-// Replace these with your actual EmailJS credentials:
-// 1. Go to https://www.emailjs.com/ and create a free account
-// 2. Add an Email Service (Gmail, Outlook, etc.) → copy the SERVICE_ID
-// 3. Create an Email Template → copy the TEMPLATE_ID
-// 4. Go to Account → copy your PUBLIC_KEY
-// ============================================
-const EMAILJS_SERVICE_ID = 'service_5yfwhsb';    // e.g. 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'template_wdazxif';  // e.g. 'template_xyz789'
-const EMAILJS_PUBLIC_KEY = 'YZrYRexuimRZZ3nYZ';     // e.g. 'AbCdEfGhIjKlMn'
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function ContactPage() {
   const formRef = useRef(null);
