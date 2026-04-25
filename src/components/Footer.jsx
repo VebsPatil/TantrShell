@@ -20,15 +20,15 @@ export default function Footer() {
           <div className="footer-col">
             <span className="footer-col-title mono">COMPANY</span>
             <Link to="/about">About</Link>
-            <a href="#">Careers</a>
-            <a href="#">Blog</a>
+            <Link to="/careers">Careers</Link>
+            <Link to="/blog">Blog</Link>
             <Link to="/contact">Contact</Link>
           </div>
           <div className="footer-col">
             <span className="footer-col-title mono">LEGAL</span>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
+            <Link to="/cookies">Cookie Policy</Link>
           </div>
         </div>
       </div>

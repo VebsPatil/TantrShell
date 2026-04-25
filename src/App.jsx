@@ -12,6 +12,11 @@ import ProductsPage from './pages/ProductsPage';
 import TrainingPage from './pages/TrainingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
+import CareersPage from './pages/CareersPage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -36,6 +41,11 @@ function App() {
           <Route path="/training" element={<TrainingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/cookies" element={<CookiePolicyPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Routes>
       </main>
 
