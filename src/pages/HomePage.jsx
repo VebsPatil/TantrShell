@@ -64,30 +64,29 @@ export default function HomePage({ loaded }) {
         <HeroScene />
         <div className="hero-content">
           <div className="hero-top-label mono">
-            <span className="status-dot"></span>
-            VER_1.0_STABLE // DEPLOY_READY
+            <div > || श्री गणेशाय नमः ||</div>
           </div>
           <h1 className="hero-title">
             <span className="hero-line line-1">SMART TECH.</span>
             <span className="hero-line line-2">READY TO</span>
             <span className="hero-line line-3"><span className="accent">DEPLOY.</span></span>
           </h1>
-          <p className="hero-subtitle">Build, Launch, Train &amp; Scale with<br />ready-made digital solutions.</p>
+          <p className="hero-subtitle">Make Your Buisness Go to World<br />GO TO INTERNET.</p>
           <div className="hero-actions">
             <Link to="/contact" className="btn btn-primary" id="hero-cta">LAUNCH PROJECT →</Link>
             <Link to="/solutions" className="btn btn-ghost" id="hero-explore">EXPLORE SERVICES</Link>
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-number" data-count="50">0</span><span className="accent">+</span>
+              <span className="stat-number" data-count="50">50+</span><span className="accent"></span>
               <span className="stat-label mono">PREBUILT PRODUCTS</span>
             </div>
             <div className="stat">
-              <span className="stat-number" data-count="200">0</span><span className="accent">+</span>
+              <span className="stat-number" data-count="200">200+</span><span className="accent"></span>
               <span className="stat-label mono">CLIENTS SERVED</span>
             </div>
             <div className="stat">
-              <span className="stat-number" data-count="99">0</span><span className="stat-suffix">.9%</span>
+              <span className="stat-number" data-count="92%">0</span>
               <span className="stat-label mono">UPTIME GUARANTEE</span>
             </div>
           </div>
@@ -134,9 +133,9 @@ export default function HomePage({ loaded }) {
               </svg>
             </div>
             <h3 className="service-title">Industry Training</h3>
-            <p className="service-desc">Practical training in web development, AI tools, cloud, cybersecurity, and product management.</p>
+            <p className="service-desc">Practical Industry Training To Your Employees <br />Make Employees Ready for New World for New World</p>
             <div className="service-tags mono">
-              <span>WEB DEV</span><span>AI/ML</span><span>CLOUD</span><span>SECURITY</span>
+              <span>WEB TECH</span><span>AI/DS</span><span>Dev Ops</span><span>Networks</span>
             </div>
           </div>
           <div className="service-card" data-index="03">
@@ -177,8 +176,8 @@ export default function HomePage({ loaded }) {
       {/* Marquee */}
       <div className="about-marquee">
         <div className="marquee-inner">
-          {['STARTUPS','LOCAL BUSINESSES','CLINICS','SCHOOLS','MANUFACTURERS','RESTAURANTS','RETAILERS','NGOS','AGENCIES','FREELANCERS',
-            'STARTUPS','LOCAL BUSINESSES','CLINICS','SCHOOLS','MANUFACTURERS','RESTAURANTS','RETAILERS','NGOS','AGENCIES','FREELANCERS']
+          {['STARTUPS', 'LOCAL BUSINESSES', 'CLINICS', 'SCHOOLS', 'MANUFACTURERS', 'RESTAURANTS', 'RETAILERS', 'NGOS', 'AGENCIES', 'FREELANCERS',
+            'STARTUPS', 'LOCAL BUSINESSES', 'CLINICS', 'SCHOOLS', 'MANUFACTURERS', 'RESTAURANTS', 'RETAILERS', 'NGOS', 'AGENCIES', 'FREELANCERS']
             .map((item, i) => (
               <React.Fragment key={i}>
                 <span>{item}</span><span className="dot">●</span>

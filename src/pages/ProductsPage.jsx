@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { SectionHeader } from '../components/SectionHeader';
 
 const allProducts = [
-  { title: 'Hospital Management', desc: 'Complete patient records, appointments, billing, pharmacy, and lab management system.', category: 'healthcare', status: 'READY', price: '$2,499' },
-  { title: 'School ERP System', desc: 'Student management, attendance, grading, fee collection, and parent communication portal.', category: 'education', status: 'READY', price: '$1,999' },
-  { title: 'E-Commerce Starter', desc: 'Full-featured online store with cart, checkout, payment gateway, and inventory management.', category: 'ecommerce', status: 'POPULAR', price: '$1,499' },
-  { title: 'HR Management Suite', desc: 'Employee records, payroll, leave management, performance tracking, and recruitment pipeline.', category: 'hr', status: 'READY', price: '$1,799' },
-  { title: 'Booking Engine', desc: 'Multi-service appointment booking with calendar, notifications, and payment integration.', category: 'service', status: 'NEW', price: '$999' },
-  { title: 'Billing & Invoicing', desc: 'Automated invoicing, tax calculation, payment tracking, and financial reporting dashboard.', category: 'hr', status: 'READY', price: '$899' },
-  { title: 'CRM Mini-Suite', desc: 'Lead management, pipeline tracking, customer communication, and analytics dashboard.', category: 'service', status: 'POPULAR', price: '$1,299' },
-  { title: 'AI Support Bot', desc: 'Intelligent chatbot with document analysis, auto-replies, and smart recommendations.', category: 'service', status: 'NEW', price: '$799' },
+  { title: 'Hospital Management', desc: 'Complete patient records, appointments, billing, pharmacy, and lab management system.', category: 'healthcare', status: 'READY', slug: 'hospital-management' },
+  { title: 'School ERP System', desc: 'Student management, attendance, grading, fee collection, and parent communication portal.', category: 'education', status: 'READY', slug: 'school-erp' },
+  { title: 'E-Commerce Starter', desc: 'Full-featured online store with cart, checkout, payment gateway, and inventory management.', category: 'ecommerce', status: 'POPULAR', slug: 'ecommerce' },
+  { title: 'HR Management Suite', desc: 'Employee records, payroll, leave management, performance tracking, and recruitment pipeline.', category: 'hr', status: 'READY', slug: 'hr-management' },
+  { title: 'Booking Engine', desc: 'Multi-service appointment booking with calendar, notifications, and payment integration.', category: 'service', status: 'NEW', slug: 'booking-engine' },
+  { title: 'Billing & Invoicing', desc: 'Automated invoicing, tax calculation, payment tracking, and financial reporting dashboard.', category: 'hr', status: 'READY', slug: 'billing' },
+  { title: 'CRM Mini-Suite', desc: 'Lead management, pipeline tracking, customer communication, and analytics dashboard.', category: 'service', status: 'POPULAR', slug: 'crm' },
+  { title: 'AI Support Bot', desc: 'Intelligent chatbot with document analysis, auto-replies, and smart recommendations.', category: 'service', status: 'NEW', slug: 'ai-support-bot' },
 ];
 
 const categories = [
@@ -56,8 +57,8 @@ export default function ProductsPage() {
             <h3 className="product-title">{p.title}</h3>
             <p className="product-desc">{p.desc}</p>
             <div className="product-footer">
-              <span className="product-price mono">FROM {p.price}</span>
-              <button className="btn btn-small">DEPLOY →</button>
+              <span className="product-price mono">{p.price}</span>
+              <Link to={`/products/${p.slug}`} className="btn btn-small">DEPLOY →</Link>
             </div>
           </div>
         ))}

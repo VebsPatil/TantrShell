@@ -18,6 +18,16 @@ import CookiePolicyPage from './pages/CookiePolicyPage';
 import CareersPage from './pages/CareersPage';
 import BlogPage from './pages/BlogPage';
 
+/* Product Deploy Pages */
+import HospitalManagementPage from './pages/products/HospitalManagementPage';
+import SchoolERPPage from './pages/products/SchoolERPPage';
+import EcommercePage from './pages/products/EcommercePage';
+import HRManagementPage from './pages/products/HRManagementPage';
+import BookingEnginePage from './pages/products/BookingEnginePage';
+import BillingPage from './pages/products/BillingPage';
+import CRMPage from './pages/products/CRMPage';
+import AISupportBotPage from './pages/products/AISupportBotPage';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
 
@@ -46,6 +56,16 @@ function App() {
           <Route path="/cookies" element={<CookiePolicyPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/blog" element={<BlogPage />} />
+
+          {/* Product Deploy Pages */}
+          <Route path="/products/hospital-management" element={<HospitalManagementPage />} />
+          <Route path="/products/school-erp" element={<SchoolERPPage />} />
+          <Route path="/products/ecommerce" element={<EcommercePage />} />
+          <Route path="/products/hr-management" element={<HRManagementPage />} />
+          <Route path="/products/booking-engine" element={<BookingEnginePage />} />
+          <Route path="/products/billing" element={<BillingPage />} />
+          <Route path="/products/crm" element={<CRMPage />} />
+          <Route path="/products/ai-support-bot" element={<AISupportBotPage />} />
         </Routes>
       </main>
 

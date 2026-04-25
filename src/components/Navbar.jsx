@@ -27,7 +27,7 @@ export default function Navbar({ visible }) {
   const links = [
     { to: '/solutions', label: 'SOLUTIONS' },
     { to: '/products', label: 'PRODUCTS' },
-    { to: '/training', label: 'TRAINING' },
+
     { to: '/about', label: 'ABOUT' },
   ];
 
@@ -55,7 +55,7 @@ export default function Navbar({ visible }) {
         ))}
       </div>
       <div className="nav-right">
-        <Link to="/contact" className="nav-cta" id="nav-cta">GET STARTED →</Link>
+        <Link to="/contact" className="nav-cta" id="nav-cta">CONTACT US →</Link>
       </div>
     </nav>
   );
