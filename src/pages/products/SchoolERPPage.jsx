@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
+import FeatureIcon from '../../components/FeatureIcon';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0uh_GQdfwnnPCJ9S3sS4JzrA8mzLZ6SYyfYCqXovdDhUkP-obYLxfN5f_kG4I0uLd2avZrw0P7ERYnGD_8ArJWEFeu6CtezyJCeKNGl_IhsOfmy6cmF1IE92lc5q9K-Uee-IZO04QQGX1qqMadOuK4tOGu2GceS_3P9gdqicwlZfV3aGMQyoLzuwAdmjlmeUqWZQqgMTCeMVzOvMkfso5m2kX2zD9iaeOmz4w4AX3k6BvizqF3FYl5WUwwU';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uh_GQdfwnnPCJ9S3sS4JzrA8mzLZ6SYyfYCqXovdDhUkP-obYLxfN5f_kG4I0uLd2avZrw0P7ERYnGD_8ArJWEFeu6CtezyJCeKNGl_IhsOfmy6cmF1IE92lc5q9K-Uee-IZO04QQGX1qqMadOuK4tOGu2GceS_3P9gdqicwlZfV3aGMQyoLzuwAdmjlmeUqWZQqgMTCeMVzOvMkfso5m2kX2zD9iaeOmz4w4AX3k6BvizqF3FYl5WUwwU', alt: 'Academic Dashboard' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uh_GQdfwnnPCJ9S3sS4JzrA8mzLZ6SYyfYCqXovdDhUkP-obYLxfN5f_kG4I0uLd2avZrw0P7ERYnGD_8ArJWEFeu6CtezyJCeKNGl_IhsOfmy6cmF1IE92lc5q9K-Uee-IZO04QQGX1qqMadOuK4tOGu2GceS_3P9gdqicwlZfV3aGMQyoLzuwAdmjlmeUqWZQqgMTCeMVzOvMkfso5m2kX2zD9iaeOmz4w4AX3k6BvizqF3FYl5WUwwU', alt: 'Student Management' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uh_GQdfwnnPCJ9S3sS4JzrA8mzLZ6SYyfYCqXovdDhUkP-obYLxfN5f_kG4I0uLd2avZrw0P7ERYnGD_8ArJWEFeu6CtezyJCeKNGl_IhsOfmy6cmF1IE92lc5q9K-Uee-IZO04QQGX1qqMadOuK4tOGu2GceS_3P9gdqicwlZfV3aGMQyoLzuwAdmjlmeUqWZQqgMTCeMVzOvMkfso5m2kX2zD9iaeOmz4w4AX3k6BvizqF3FYl5WUwwU', alt: 'Fee Collection' },
+];
 
 const features = [
-  { icon: '👨‍🎓', title: 'Student Records', desc: 'Complete student profiles with enrollment data, academic history, health records, and parent/guardian contact management.' },
-  { icon: '📋', title: 'Attendance Tracking', desc: 'Digital roll call, biometric integration, absence notifications, and detailed attendance analytics with trend visualization.' },
-  { icon: '📝', title: 'Grade Management', desc: 'Flexible grading systems, report card generation, GPA calculation, and academic performance tracking across terms.' },
-  { icon: '💳', title: 'Fee Collection', desc: 'Online fee payment, installment plans, receipt generation, defaulter tracking, and financial reconciliation.' },
-  { icon: '💬', title: 'Parent Portal', desc: 'Dedicated parent communication hub with announcements, progress reports, teacher messaging, and event calendars.' },
-  { icon: '📆', title: 'Timetable Engine', desc: 'Automated timetable generation, teacher assignment, room allocation, and conflict-free scheduling algorithms.' },
+  { icon: '/icons/school/student-records.png', title: 'Student Records', desc: 'Complete student profiles with enrollment data, academic history, health records, and parent/guardian contact management.' },
+  { icon: '/icons/school/attendance.png', title: 'Attendance Tracking', desc: 'Digital roll call, biometric integration, absence notifications, and detailed attendance analytics with trend visualization.' },
+  { icon: '/icons/school/grade.png', title: 'Grade Management', desc: 'Flexible grading systems, report card generation, GPA calculation, and academic performance tracking across terms.' },
+  { icon: '/icons/school/fee-collection.png', title: 'Fee Collection', desc: 'Online fee payment, installment plans, receipt generation, defaulter tracking, and financial reconciliation.' },
+  { icon: '/icons/school/parent-portal.png', title: 'Parent Portal', desc: 'Dedicated parent communication hub with announcements, progress reports, teacher messaging, and event calendars.' },
+  { iconSvg: 'smart-calendar', title: 'Timetable Engine', desc: 'Automated timetable generation, teacher assignment, room allocation, and conflict-free scheduling algorithms.' },
 ];
 
 const techStack = ['React', 'Node.js', 'MongoDB', 'Express', 'PWA', 'WebSocket'];
@@ -40,7 +46,7 @@ export default function SchoolERPPage() {
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(129,140,248,0.15)' }}>
           <div className="pdp-screenshot-topbar"><div className="pdp-dots"><span /><span /><span /></div><span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>SCHOLARPULSE — ACADEMIC DASHBOARD</span></div>
-          <img src={screenshotUrl} alt="School ERP Dashboard" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -52,7 +58,9 @@ export default function SchoolERPPage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#818CF8' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon">
+                {f.icon ? <img src={f.icon} alt={f.title} /> : <FeatureIcon name={f.iconSvg} color="#818CF8" />}
+              </div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

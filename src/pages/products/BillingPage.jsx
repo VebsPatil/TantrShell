@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0ui_H2Xwwv-iqye_TcZ6Bhq5MMFne4SdBDmvRCmR0t4rIscccxhl-hOhNDrkMm8MTqPotDxIUIvd94gISyE3XUNC8Msm_aVjh-z9ZAwRgNoH9d1z_nh-EFWQq8ZpKsMHBfuL_Jq1azEWp5W6j7zQWqPNOCKQsIl1OvMQIlVM98RIK8rQ7BlINdkUrNG_ELlCgN-CswvQLy2WbCa9qECSPlqzDLr6AcruSmMBRbBhxtWlC354RntwLpi0lIE';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui_H2Xwwv-iqye_TcZ6Bhq5MMFne4SdBDmvRCmR0t4rIscccxhl-hOhNDrkMm8MTqPotDxIUIvd94gISyE3XUNC8Msm_aVjh-z9ZAwRgNoH9d1z_nh-EFWQq8ZpKsMHBfuL_Jq1azEWp5W6j7zQWqPNOCKQsIl1OvMQIlVM98RIK8rQ7BlINdkUrNG_ELlCgN-CswvQLy2WbCa9qECSPlqzDLr6AcruSmMBRbBhxtWlC354RntwLpi0lIE', alt: 'Billing Dashboard' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui_H2Xwwv-iqye_TcZ6Bhq5MMFne4SdBDmvRCmR0t4rIscccxhl-hOhNDrkMm8MTqPotDxIUIvd94gISyE3XUNC8Msm_aVjh-z9ZAwRgNoH9d1z_nh-EFWQq8ZpKsMHBfuL_Jq1azEWp5W6j7zQWqPNOCKQsIl1OvMQIlVM98RIK8rQ7BlINdkUrNG_ELlCgN-CswvQLy2WbCa9qECSPlqzDLr6AcruSmMBRbBhxtWlC354RntwLpi0lIE', alt: 'Invoice Generator' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui_H2Xwwv-iqye_TcZ6Bhq5MMFne4SdBDmvRCmR0t4rIscccxhl-hOhNDrkMm8MTqPotDxIUIvd94gISyE3XUNC8Msm_aVjh-z9ZAwRgNoH9d1z_nh-EFWQq8ZpKsMHBfuL_Jq1azEWp5W6j7zQWqPNOCKQsIl1OvMQIlVM98RIK8rQ7BlINdkUrNG_ELlCgN-CswvQLy2WbCa9qECSPlqzDLr6AcruSmMBRbBhxtWlC354RntwLpi0lIE', alt: 'Financial Reports' },
+];
 
 const features = [
-  { icon: '📄', title: 'Auto Invoicing', desc: 'Generate professional invoices automatically with customizable templates, branding, and batch processing.' },
-  { icon: '🧮', title: 'GST/Tax Engine', desc: 'Built-in GST, VAT, and sales tax calculation with compliance-ready reporting and e-filing integration.' },
-  { icon: '💰', title: 'Payment Tracking', desc: 'Real-time payment status updates, aging reports, automated reminders for overdue invoices, and reconciliation.' },
-  { icon: '📊', title: 'Financial Reports', desc: 'Profit & loss, balance sheet, cash flow statements, and custom report builder with PDF/Excel export.' },
-  { icon: '🔄', title: 'Recurring Billing', desc: 'Subscription management, automatic renewal, proration support, and dunning management for failed payments.' },
-  { icon: '🏦', title: 'Multi-Currency', desc: 'Support for 50+ currencies, real-time exchange rates, and localized invoice formatting for global commerce.' },
+  { icon: '/icons/billing/auto-invoicing.png', title: 'Auto Invoicing', desc: 'Generate professional invoices automatically with customizable templates, branding, and batch processing.' },
+  { icon: '/icons/billing/gst-tax.png', title: 'GST/Tax Engine', desc: 'Built-in GST, VAT, and sales tax calculation with compliance-ready reporting and e-filing integration.' },
+  { icon: '/icons/billing/payment-tracking.png', title: 'Payment Tracking', desc: 'Real-time payment status updates, aging reports, automated reminders for overdue invoices, and reconciliation.' },
+  { icon: '/icons/billing/financial-reports.png', title: 'Financial Reports', desc: 'Profit & loss, balance sheet, cash flow statements, and custom report builder with PDF/Excel export.' },
+  { icon: '/icons/billing/recurring-billing.png', title: 'Recurring Billing', desc: 'Subscription management, automatic renewal, proration support, and dunning management for failed payments.' },
+  { icon: '/icons/billing/multi-currency.png', title: 'Multi-Currency', desc: 'Support for 50+ currencies, real-time exchange rates, and localized invoice formatting for global commerce.' },
 ];
 
 const techStack = ['React', 'Node.js', 'PostgreSQL', 'Tally API', 'PDF.js', 'Cron'];
@@ -40,7 +45,7 @@ export default function BillingPage() {
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(255,215,0,0.12)' }}>
           <div className="pdp-screenshot-topbar"><div className="pdp-dots"><span /><span /><span /></div><span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>THE VAULT — BILLING DASHBOARD</span></div>
-          <img src={screenshotUrl} alt="Billing & Invoicing Dashboard" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -52,7 +57,7 @@ export default function BillingPage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#FFD700' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon"><img src={f.icon} alt={f.title} /></div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0uhpCc-9zOLray3zmcAbur5LPlWEEozDs8V3rHfbkJFRLWRfRCPqjYlb5bxAxSg6DXfGFtskrcDE5YhCyMeBPD7F4MGOF8v_5fETtdqbCKS7FpTsETXWx-sxErgd3EuC2XpeeFBe6sKChiJ7oUzFcHf-qIrZ1ECmyQJ2ycZzwCBtRz2OPO0axQFezIz247F8q1Nz4WXorCv3OtOdaYeOdfFjMlE2GGlFvK18unNQc0K7XAhClc_WkhMUQA';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhpCc-9zOLray3zmcAbur5LPlWEEozDs8V3rHfbkJFRLWRfRCPqjYlb5bxAxSg6DXfGFtskrcDE5YhCyMeBPD7F4MGOF8v_5fETtdqbCKS7FpTsETXWx-sxErgd3EuC2XpeeFBe6sKChiJ7oUzFcHf-qIrZ1ECmyQJ2ycZzwCBtRz2OPO0axQFezIz247F8q1Nz4WXorCv3OtOdaYeOdfFjMlE2GGlFvK18unNQc0K7XAhClc_WkhMUQA', alt: 'Clinical Dashboard' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhpCc-9zOLray3zmcAbur5LPlWEEozDs8V3rHfbkJFRLWRfRCPqjYlb5bxAxSg6DXfGFtskrcDE5YhCyMeBPD7F4MGOF8v_5fETtdqbCKS7FpTsETXWx-sxErgd3EuC2XpeeFBe6sKChiJ7oUzFcHf-qIrZ1ECmyQJ2ycZzwCBtRz2OPO0axQFezIz247F8q1Nz4WXorCv3OtOdaYeOdfFjMlE2GGlFvK18unNQc0K7XAhClc_WkhMUQA', alt: 'Patient Records View' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhpCc-9zOLray3zmcAbur5LPlWEEozDs8V3rHfbkJFRLWRfRCPqjYlb5bxAxSg6DXfGFtskrcDE5YhCyMeBPD7F4MGOF8v_5fETtdqbCKS7FpTsETXWx-sxErgd3EuC2XpeeFBe6sKChiJ7oUzFcHf-qIrZ1ECmyQJ2ycZzwCBtRz2OPO0axQFezIz247F8q1Nz4WXorCv3OtOdaYeOdfFjMlE2GGlFvK18unNQc0K7XAhClc_WkhMUQA', alt: 'Appointment Calendar' },
+];
 
 const features = [
-  { icon: '🏥', title: 'Patient Records', desc: 'Complete patient history with demographics, medical history, allergies, and treatment timelines in a unified digital record.' },
-  { icon: '📅', title: 'Appointment Scheduling', desc: 'Smart calendar system with automated reminders, multi-doctor scheduling, and conflict detection.' },
-  { icon: '💊', title: 'Pharmacy Management', desc: 'Real-time inventory tracking, auto-reorder alerts, prescription management, and drug interaction warnings.' },
-  { icon: '🧪', title: 'Lab Integration', desc: 'Seamless lab test ordering, automated result collection, critical value flagging, and report generation.' },
-  { icon: '💰', title: 'Billing & Insurance', desc: 'Automated invoicing, insurance claim processing, payment tracking, and financial analytics dashboard.' },
-  { icon: '📊', title: 'Analytics Dashboard', desc: 'Real-time ward occupancy, revenue metrics, patient flow analysis, and operational KPIs at a glance.' },
+  { icon: '/icons/hospital/patient-records.png', title: 'Patient Records', desc: 'Complete patient history with demographics, medical history, allergies, and treatment timelines in a unified digital record.' },
+  { icon: '/icons/hospital/appointment.png', title: 'Appointment Scheduling', desc: 'Smart calendar system with automated reminders, multi-doctor scheduling, and conflict detection.' },
+  { icon: '/icons/hospital/pharmacy.png', title: 'Pharmacy Management', desc: 'Real-time inventory tracking, auto-reorder alerts, prescription management, and drug interaction warnings.' },
+  { icon: '/icons/hospital/lab.png', title: 'Lab Integration', desc: 'Seamless lab test ordering, automated result collection, critical value flagging, and report generation.' },
+  { icon: '/icons/hospital/billing-insurance.png', title: 'Billing & Insurance', desc: 'Automated invoicing, insurance claim processing, payment tracking, and financial analytics dashboard.' },
+  { icon: '/icons/hospital/analytics.png', title: 'Analytics Dashboard', desc: 'Real-time ward occupancy, revenue metrics, patient flow analysis, and operational KPIs at a glance.' },
 ];
 
 const techStack = ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'REST API'];
@@ -38,14 +43,14 @@ export default function HospitalManagementPage() {
         </div>
       </section>
 
-      {/* Screenshot */}
+      {/* Screenshot Slider */}
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(0,206,209,0.15)' }}>
           <div className="pdp-screenshot-topbar">
             <div className="pdp-dots"><span /><span /><span /></div>
             <span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>CLINICAL DASHBOARD — LUMINARY HEALTH</span>
           </div>
-          <img src={screenshotUrl} alt="Hospital Management System Dashboard" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -58,7 +63,7 @@ export default function HospitalManagementPage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#00CED1' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon"><img src={f.icon} alt={f.title} /></div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

@@ -79,9 +79,14 @@ export default function CareersPage() {
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.career-perk, .job-listing, .careers-intro').forEach(el => obs.observe(el));
+    document.querySelectorAll('.career-perk, .job-listing-wrapper, .careers-intro').forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
+
+  const handleApply = (e, jobTitle) => {
+    e.preventDefault();
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSchCp81DoQKwb-acCPEHUHxqRkkLAYayAcyiMLj33FlDRuE6A/viewform?usp=publish-editor', '_blank');
+  };
 
   return (
     <section id="careers" className="section section-careers" style={{ paddingTop: '8rem' }}>
@@ -134,40 +139,39 @@ export default function CareersPage() {
         <h3 className="careers-section-title">Open <span className="accent">Positions</span></h3>
         <div className="job-listings">
           {openings.map((job, i) => (
-            <div
-              key={job.id}
-              className={`job-listing ${expandedJob === job.id ? 'expanded' : ''}`}
-              data-animate=""
-              style={{ transitionDelay: `${i * 0.06}s` }}
-            >
-              <div className="job-listing-header" onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}>
-                <div className="job-listing-info">
-                  <span className="job-department mono">{job.department}</span>
-                  <h4 className="job-title">{job.title}</h4>
-                  <div className="job-meta">
-                    <span className="job-meta-item mono">{job.location}</span>
-                    <span className="job-meta-dot">·</span>
-                    <span className="job-meta-item mono">{job.type}</span>
+            <div key={job.id} className="job-listing-wrapper" style={{ transitionDelay: `${i * 0.06}s` }}>
+              <div
+                className={`job-listing ${expandedJob === job.id ? 'expanded' : ''}`}
+              >
+                <div className="job-listing-header" onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}>
+                  <div className="job-listing-info">
+                    <span className="job-department mono">{job.department}</span>
+                    <h4 className="job-title">{job.title}</h4>
+                    <div className="job-meta">
+                      <span className="job-meta-item mono">{job.location}</span>
+                      <span className="job-meta-dot">·</span>
+                      <span className="job-meta-item mono">{job.type}</span>
+                    </div>
                   </div>
+                  <span className="job-expand-icon">{expandedJob === job.id ? '−' : '+'}</span>
                 </div>
-                <span className="job-expand-icon">{expandedJob === job.id ? '−' : '+'}</span>
+                {expandedJob === job.id && (
+                  <div className="job-listing-details">
+                    <p className="job-description">{job.description}</p>
+                    <div className="job-requirements">
+                      <span className="job-requirements-label mono">REQUIREMENTS</span>
+                      <ul>
+                        {job.requirements.map((req, j) => (
+                          <li key={j}>{req}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <a href="#" onClick={(e) => handleApply(e, job.title)} className="btn btn-primary btn-small">
+                      APPLY NOW →
+                    </a>
+                  </div>
+                )}
               </div>
-              {expandedJob === job.id && (
-                <div className="job-listing-details">
-                  <p className="job-description">{job.description}</p>
-                  <div className="job-requirements">
-                    <span className="job-requirements-label mono">REQUIREMENTS</span>
-                    <ul>
-                      {job.requirements.map((req, j) => (
-                        <li key={j}>{req}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <a href={`mailto:careers@tantrshell.com?subject=Application: ${job.title}`} className="btn btn-primary btn-small">
-                    APPLY NOW →
-                  </a>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -177,7 +181,7 @@ export default function CareersPage() {
       <div className="careers-cta">
         <h3>Don't see your role?</h3>
         <p>We're always looking for exceptional talent. Send us your portfolio and tell us how you'd contribute.</p>
-        <a href="mailto:careers@tantrshell.com?subject=General Application" className="btn btn-ghost">
+        <a href="#" onClick={(e) => handleApply(e, '')} className="btn btn-ghost">
           SEND OPEN APPLICATION →
         </a>
       </div>

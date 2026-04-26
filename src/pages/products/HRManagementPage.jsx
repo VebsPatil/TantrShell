@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
+import FeatureIcon from '../../components/FeatureIcon';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0uiEI5X_9Y_CTkoWKjSMK2Blk-qsovaBjzEcKBC9RDQMY4zS7Oc6u4Xf3Mk76tim8inO6kMSJCRfSgmiC5UYqQjcwCM1B_INsQZ0uivMhXbCbDqP-5sgPO1DCKEFhu2QWi5-Tvb9YUQMlmOdrq83qU4ielYLI7gWaCOs4fLmd2FqMoFn7NkPzQZHVI6JR2nkjAw2t6eS8w4WvYlCHNKOyhSzvEcpuWPks8p63SN3GI74gKHJsxWTIN5vHw';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uiEI5X_9Y_CTkoWKjSMK2Blk-qsovaBjzEcKBC9RDQMY4zS7Oc6u4Xf3Mk76tim8inO6kMSJCRfSgmiC5UYqQjcwCM1B_INsQZ0uivMhXbCbDqP-5sgPO1DCKEFhu2QWi5-Tvb9YUQMlmOdrq83qU4ielYLI7gWaCOs4fLmd2FqMoFn7NkPzQZHVI6JR2nkjAw2t6eS8w4WvYlCHNKOyhSzvEcpuWPks8p63SN3GI74gKHJsxWTIN5vHw', alt: 'HR Dashboard' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uiEI5X_9Y_CTkoWKjSMK2Blk-qsovaBjzEcKBC9RDQMY4zS7Oc6u4Xf3Mk76tim8inO6kMSJCRfSgmiC5UYqQjcwCM1B_INsQZ0uivMhXbCbDqP-5sgPO1DCKEFhu2QWi5-Tvb9YUQMlmOdrq83qU4ielYLI7gWaCOs4fLmd2FqMoFn7NkPzQZHVI6JR2nkjAw2t6eS8w4WvYlCHNKOyhSzvEcpuWPks8p63SN3GI74gKHJsxWTIN5vHw', alt: 'Employee Directory' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uiEI5X_9Y_CTkoWKjSMK2Blk-qsovaBjzEcKBC9RDQMY4zS7Oc6u4Xf3Mk76tim8inO6kMSJCRfSgmiC5UYqQjcwCM1B_INsQZ0uivMhXbCbDqP-5sgPO1DCKEFhu2QWi5-Tvb9YUQMlmOdrq83qU4ielYLI7gWaCOs4fLmd2FqMoFn7NkPzQZHVI6JR2nkjAw2t6eS8w4WvYlCHNKOyhSzvEcpuWPks8p63SN3GI74gKHJsxWTIN5vHw', alt: 'Payroll Management' },
+];
 
 const features = [
-  { icon: '👤', title: 'Employee Directory', desc: 'Centralized employee profiles with org charts, role history, document management, and emergency contacts.' },
-  { icon: '💵', title: 'Payroll Processing', desc: 'Automated salary calculation, tax deductions, bank transfers, and payslip generation with compliance checks.' },
-  { icon: '🏖️', title: 'Leave Management', desc: 'Leave requests, approval workflows, balance tracking, holiday calendars, and comp-off management.' },
-  { icon: '⭐', title: 'Performance Reviews', desc: '360-degree feedback, goal setting, KPI tracking, review cycles, and performance improvement plans.' },
-  { icon: '🎯', title: 'Recruitment Pipeline', desc: 'Job posting, applicant tracking, interview scheduling, offer management, and onboarding workflows.' },
-  { icon: '📊', title: 'HR Analytics', desc: 'Attrition analysis, headcount trends, compensation benchmarking, and diversity reports.' },
+  { iconSvg: 'employee-dir', title: 'Employee Directory', desc: 'Centralized employee profiles with org charts, role history, document management, and emergency contacts.' },
+  { iconSvg: 'payroll', title: 'Payroll Processing', desc: 'Automated salary calculation, tax deductions, bank transfers, and payslip generation with compliance checks.' },
+  { iconSvg: 'leave-mgmt', title: 'Leave Management', desc: 'Leave requests, approval workflows, balance tracking, holiday calendars, and comp-off management.' },
+  { iconSvg: 'performance', title: 'Performance Reviews', desc: '360-degree feedback, goal setting, KPI tracking, review cycles, and performance improvement plans.' },
+  { iconSvg: 'recruitment', title: 'Recruitment Pipeline', desc: 'Job posting, applicant tracking, interview scheduling, offer management, and onboarding workflows.' },
+  { iconSvg: 'hr-analytics', title: 'HR Analytics', desc: 'Attrition analysis, headcount trends, compensation benchmarking, and diversity reports.' },
 ];
 
 const techStack = ['React', 'Python', 'PostgreSQL', 'Celery', 'Docker', 'REST API'];
@@ -40,7 +46,7 @@ export default function HRManagementPage() {
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(16,185,129,0.15)' }}>
           <div className="pdp-screenshot-topbar"><div className="pdp-dots"><span /><span /><span /></div><span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>EMERALD CORE — HR DASHBOARD</span></div>
-          <img src={screenshotUrl} alt="HR Management Dashboard" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -52,7 +58,7 @@ export default function HRManagementPage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#10B981' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon"><FeatureIcon name={f.iconSvg} color="#10B981" /></div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

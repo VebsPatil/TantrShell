@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
+import FeatureIcon from '../../components/FeatureIcon';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0uhIFQqLm9JCIOKFifKcGHdv1A8S8_YeDDgxzfe4NNIqJ-LKrz9DCAlxkIf-cQpP4AtbOq5E0k6wozngwMs3V1Eq4L0itVuCssCdhzejBn-vSjAJLeB_65n50rddRUMEO7cmxjIhF16dNtfsmjfEMxTggnkujJ_wwbuH5S1i3eJpNgIdlPRMGpUzPIEt5k_axA97t2v9GJkIa-oLG-qJ-eClxSLyrp3caJBnpXBklK9IA6V4w8-wAY2gnzg';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhIFQqLm9JCIOKFifKcGHdv1A8S8_YeDDgxzfe4NNIqJ-LKrz9DCAlxkIf-cQpP4AtbOq5E0k6wozngwMs3V1Eq4L0itVuCssCdhzejBn-vSjAJLeB_65n50rddRUMEO7cmxjIhF16dNtfsmjfEMxTggnkujJ_wwbuH5S1i3eJpNgIdlPRMGpUzPIEt5k_axA97t2v9GJkIa-oLG-qJ-eClxSLyrp3caJBnpXBklK9IA6V4w8-wAY2gnzg', alt: 'AI Chat Interface' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhIFQqLm9JCIOKFifKcGHdv1A8S8_YeDDgxzfe4NNIqJ-LKrz9DCAlxkIf-cQpP4AtbOq5E0k6wozngwMs3V1Eq4L0itVuCssCdhzejBn-vSjAJLeB_65n50rddRUMEO7cmxjIhF16dNtfsmjfEMxTggnkujJ_wwbuH5S1i3eJpNgIdlPRMGpUzPIEt5k_axA97t2v9GJkIa-oLG-qJ-eClxSLyrp3caJBnpXBklK9IA6V4w8-wAY2gnzg', alt: 'Knowledge Base' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhIFQqLm9JCIOKFifKcGHdv1A8S8_YeDDgxzfe4NNIqJ-LKrz9DCAlxkIf-cQpP4AtbOq5E0k6wozngwMs3V1Eq4L0itVuCssCdhzejBn-vSjAJLeB_65n50rddRUMEO7cmxjIhF16dNtfsmjfEMxTggnkujJ_wwbuH5S1i3eJpNgIdlPRMGpUzPIEt5k_axA97t2v9GJkIa-oLG-qJ-eClxSLyrp3caJBnpXBklK9IA6V4w8-wAY2gnzg', alt: 'Analytics Dashboard' },
+];
 
 const features = [
-  { icon: '🤖', title: 'Intelligent Chat', desc: 'Context-aware AI conversations with natural language understanding, multi-turn dialogue, and intent recognition.' },
-  { icon: '📄', title: 'Document Analysis', desc: 'Upload PDFs, docs, and knowledge bases — the bot learns your content and answers from your data.' },
-  { icon: '⚡', title: 'Auto-Replies', desc: 'Smart response templates, out-of-hours handling, FAQ auto-detection, and escalation triggers.' },
-  { icon: '🧠', title: 'Smart Recommendations', desc: 'AI-powered product suggestions, next-best-action prompts, and contextual help article surfacing.' },
-  { icon: '📊', title: 'Analytics Dashboard', desc: 'CSAT tracking, resolution times, bot vs. human handling ratios, and conversation heat maps.' },
-  { icon: '🔌', title: 'Multi-Channel', desc: 'Deploy across website widget, WhatsApp, Telegram, Slack, and custom integrations via API.' },
+  { iconSvg: 'intelligent-chat', title: 'Intelligent Chat', desc: 'Context-aware AI conversations with natural language understanding, multi-turn dialogue, and intent recognition.' },
+  { iconSvg: 'document-analysis', title: 'Document Analysis', desc: 'Upload PDFs, docs, and knowledge bases — the bot learns your content and answers from your data.' },
+  { iconSvg: 'auto-replies', title: 'Auto-Replies', desc: 'Smart response templates, out-of-hours handling, FAQ auto-detection, and escalation triggers.' },
+  { iconSvg: 'smart-recommend', title: 'Smart Recommendations', desc: 'AI-powered product suggestions, next-best-action prompts, and contextual help article surfacing.' },
+  { iconSvg: 'ai-analytics', title: 'Analytics Dashboard', desc: 'CSAT tracking, resolution times, bot vs. human handling ratios, and conversation heat maps.' },
+  { iconSvg: 'multi-channel', title: 'Multi-Channel', desc: 'Deploy across website widget, WhatsApp, Telegram, Slack, and custom integrations via API.' },
 ];
 
 const techStack = ['React', 'Python', 'LangChain', 'OpenAI', 'Pinecone', 'FastAPI'];
@@ -40,7 +46,7 @@ export default function AISupportBotPage() {
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(139,92,246,0.15)' }}>
           <div className="pdp-screenshot-topbar"><div className="pdp-dots"><span /><span /><span /></div><span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>OBSIDIAN CORE — AI CHAT INTERFACE</span></div>
-          <img src={screenshotUrl} alt="AI Support Bot Interface" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -52,7 +58,7 @@ export default function AISupportBotPage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#8B5CF6' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon"><FeatureIcon name={f.iconSvg} color="#8B5CF6" /></div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

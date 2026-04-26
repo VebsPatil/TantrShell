@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
+import FeatureIcon from '../../components/FeatureIcon';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0ui2BsjoPUndToE7aidIXs3--X0Qutn8K1JgZfF3q3Rvziw5lxsyrckZItn-F2Ua9TxocVKWR0tDrpCYcvDQ49HTE5SO2HtE3DUIKBF1-DH6rXY60ORPNAG0mcfCsBrhlb5-ymaAvgH7iwRjP3hXPdD6UzOXkh9tQLHDySB1H70V0awSkeLENrOG1xFpu_k2WXq5J6G6DX_lZ3iqFUmcB7SE5jlLNGLOfRyDnmrd9dhEEcgAL4AR1Wt7sWs';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui2BsjoPUndToE7aidIXs3--X0Qutn8K1JgZfF3q3Rvziw5lxsyrckZItn-F2Ua9TxocVKWR0tDrpCYcvDQ49HTE5SO2HtE3DUIKBF1-DH6rXY60ORPNAG0mcfCsBrhlb5-ymaAvgH7iwRjP3hXPdD6UzOXkh9tQLHDySB1H70V0awSkeLENrOG1xFpu_k2WXq5J6G6DX_lZ3iqFUmcB7SE5jlLNGLOfRyDnmrd9dhEEcgAL4AR1Wt7sWs', alt: 'Admin Dashboard' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui2BsjoPUndToE7aidIXs3--X0Qutn8K1JgZfF3q3Rvziw5lxsyrckZItn-F2Ua9TxocVKWR0tDrpCYcvDQ49HTE5SO2HtE3DUIKBF1-DH6rXY60ORPNAG0mcfCsBrhlb5-ymaAvgH7iwRjP3hXPdD6UzOXkh9tQLHDySB1H70V0awSkeLENrOG1xFpu_k2WXq5J6G6DX_lZ3iqFUmcB7SE5jlLNGLOfRyDnmrd9dhEEcgAL4AR1Wt7sWs', alt: 'Product Catalog' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui2BsjoPUndToE7aidIXs3--X0Qutn8K1JgZfF3q3Rvziw5lxsyrckZItn-F2Ua9TxocVKWR0tDrpCYcvDQ49HTE5SO2HtE3DUIKBF1-DH6rXY60ORPNAG0mcfCsBrhlb5-ymaAvgH7iwRjP3hXPdD6UzOXkh9tQLHDySB1H70V0awSkeLENrOG1xFpu_k2WXq5J6G6DX_lZ3iqFUmcB7SE5jlLNGLOfRyDnmrd9dhEEcgAL4AR1Wt7sWs', alt: 'Order Management' },
+];
 
 const features = [
-  { icon: '🛒', title: 'Product Catalog', desc: 'Rich product management with variants, bulk upload, SEO-friendly URLs, and advanced filtering and search.' },
-  { icon: '💳', title: 'Payment Gateway', desc: 'Multi-gateway integration — Stripe, Razorpay, PayPal — with secure checkout and automated refund processing.' },
-  { icon: '📦', title: 'Inventory Control', desc: 'Real-time stock management, warehouse tracking, low-stock alerts, and automated purchase order generation.' },
-  { icon: '🚚', title: 'Order Pipeline', desc: 'Complete order lifecycle management from placement to delivery with tracking, returns, and exchange workflows.' },
-  { icon: '📈', title: 'Revenue Analytics', desc: 'Customer lifetime value, conversion funnels, sales trends, and product performance with exportable reports.' },
-  { icon: '👥', title: 'Customer Management', desc: 'Customer profiles, order history, wishlists, loyalty programs, and segmented email marketing tools.' },
+  { iconSvg: 'product-catalog', title: 'Product Catalog', desc: 'Rich product management with variants, bulk upload, SEO-friendly URLs, and advanced filtering and search.' },
+  { iconSvg: 'payment-gateway', title: 'Payment Gateway', desc: 'Multi-gateway integration — Stripe, Razorpay, PayPal — with secure checkout and automated refund processing.' },
+  { iconSvg: 'inventory', title: 'Inventory Control', desc: 'Real-time stock management, warehouse tracking, low-stock alerts, and automated purchase order generation.' },
+  { iconSvg: 'order-pipeline', title: 'Order Pipeline', desc: 'Complete order lifecycle management from placement to delivery with tracking, returns, and exchange workflows.' },
+  { iconSvg: 'revenue-analytics', title: 'Revenue Analytics', desc: 'Customer lifetime value, conversion funnels, sales trends, and product performance with exportable reports.' },
+  { iconSvg: 'customer-mgmt', title: 'Customer Management', desc: 'Customer profiles, order history, wishlists, loyalty programs, and segmented email marketing tools.' },
 ];
 
 const techStack = ['Next.js', 'Stripe', 'PostgreSQL', 'Redis', 'Cloudflare', 'GraphQL'];
@@ -40,7 +46,7 @@ export default function EcommercePage() {
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(255,143,0,0.15)' }}>
           <div className="pdp-screenshot-topbar"><div className="pdp-dots"><span /><span /><span /></div><span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>AMBER COMMERCE — ADMIN DASHBOARD</span></div>
-          <img src={screenshotUrl} alt="E-Commerce Dashboard" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -52,7 +58,7 @@ export default function EcommercePage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#FF8F00' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon"><FeatureIcon name={f.iconSvg} color="#FF8F00" /></div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

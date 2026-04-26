@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../../components/ImageSlider';
+import FeatureIcon from '../../components/FeatureIcon';
 
-const screenshotUrl = 'https://lh3.googleusercontent.com/aida/ADBb0ujc9qlFFeLie9dR89ILUDi5sFKUZOo4ea_eNvRCZ1egyfDiTWcG9eCG7yEn5DgZnngDvihasCOCeagtczAZ8LQAeKu2CnTN5WsNH8RWnwgKej2FruBz65XLSTBfCfu4JK8q7wDEirUk6yv5kvcWnjNIomMbV4pVkFs4qM9B9KaQhNOA2a3MWXT-cciiHPLE1RORoww1fLAo3BwDqdOrJKJUFm0O0aTYFBupBoaMxqd1j6CwLaAYLcysnQ0';
+const screenshots = [
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ujc9qlFFeLie9dR89ILUDi5sFKUZOo4ea_eNvRCZ1egyfDiTWcG9eCG7yEn5DgZnngDvihasCOCeagtczAZ8LQAeKu2CnTN5WsNH8RWnwgKej2FruBz65XLSTBfCfu4JK8q7wDEirUk6yv5kvcWnjNIomMbV4pVkFs4qM9B9KaQhNOA2a3MWXT-cciiHPLE1RORoww1fLAo3BwDqdOrJKJUFm0O0aTYFBupBoaMxqd1j6CwLaAYLcysnQ0', alt: 'Booking Dashboard' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ujc9qlFFeLie9dR89ILUDi5sFKUZOo4ea_eNvRCZ1egyfDiTWcG9eCG7yEn5DgZnngDvihasCOCeagtczAZ8LQAeKu2CnTN5WsNH8RWnwgKej2FruBz65XLSTBfCfu4JK8q7wDEirUk6yv5kvcWnjNIomMbV4pVkFs4qM9B9KaQhNOA2a3MWXT-cciiHPLE1RORoww1fLAo3BwDqdOrJKJUFm0O0aTYFBupBoaMxqd1j6CwLaAYLcysnQ0', alt: 'Calendar View' },
+  { src: 'https://lh3.googleusercontent.com/aida/ADBb0ujc9qlFFeLie9dR89ILUDi5sFKUZOo4ea_eNvRCZ1egyfDiTWcG9eCG7yEn5DgZnngDvihasCOCeagtczAZ8LQAeKu2CnTN5WsNH8RWnwgKej2FruBz65XLSTBfCfu4JK8q7wDEirUk6yv5kvcWnjNIomMbV4pVkFs4qM9B9KaQhNOA2a3MWXT-cciiHPLE1RORoww1fLAo3BwDqdOrJKJUFm0O0aTYFBupBoaMxqd1j6CwLaAYLcysnQ0', alt: 'Client Bookings' },
+];
 
 const features = [
-  { icon: '📅', title: 'Smart Calendar', desc: 'Multi-service calendar with time slots, availability management, buffer times, and recurring booking support.' },
-  { icon: '🔔', title: 'Auto Notifications', desc: 'Email & SMS reminders, confirmation alerts, rescheduling notifications, and follow-up campaigns.' },
-  { icon: '💳', title: 'Payment Integration', desc: 'Upfront payments, deposits, refund handling, and multi-currency support with Stripe and Razorpay.' },
-  { icon: '👥', title: 'Client Management', desc: 'Customer profiles, booking history, preferences, notes, and loyalty tracking for repeat clients.' },
-  { icon: '📊', title: 'Revenue Analytics', desc: 'Booking trends, peak hours analysis, no-show rates, and revenue forecasting dashboards.' },
-  { icon: '🔗', title: 'Embed & Share', desc: 'Embeddable booking widget for your website, shareable booking links, and QR code generation.' },
+  { iconSvg: 'smart-calendar', title: 'Smart Calendar', desc: 'Multi-service calendar with time slots, availability management, buffer times, and recurring booking support.' },
+  { iconSvg: 'notifications', title: 'Auto Notifications', desc: 'Email & SMS reminders, confirmation alerts, rescheduling notifications, and follow-up campaigns.' },
+  { iconSvg: 'payment-integration', title: 'Payment Integration', desc: 'Upfront payments, deposits, refund handling, and multi-currency support with Stripe and Razorpay.' },
+  { iconSvg: 'client-mgmt', title: 'Client Management', desc: 'Customer profiles, booking history, preferences, notes, and loyalty tracking for repeat clients.' },
+  { iconSvg: 'booking-analytics', title: 'Revenue Analytics', desc: 'Booking trends, peak hours analysis, no-show rates, and revenue forecasting dashboards.' },
+  { iconSvg: 'embed-share', title: 'Embed & Share', desc: 'Embeddable booking widget for your website, shareable booking links, and QR code generation.' },
 ];
 
 const techStack = ['React', 'Node.js', 'MongoDB', 'Twilio', 'Stripe', 'Socket.io'];
@@ -40,7 +46,7 @@ export default function BookingEnginePage() {
       <section className="pdp-screenshot-section">
         <div className="pdp-screenshot-wrapper" style={{ boxShadow: '0 30px 80px rgba(14,165,233,0.15)' }}>
           <div className="pdp-screenshot-topbar"><div className="pdp-dots"><span /><span /><span /></div><span className="mono" style={{ fontSize: '0.6rem', color: 'var(--outline)' }}>SKY OBSIDIAN — BOOKING DASHBOARD</span></div>
-          <img src={screenshotUrl} alt="Booking Engine Dashboard" className="pdp-screenshot" loading="lazy" />
+          <ImageSlider images={screenshots} />
         </div>
       </section>
 
@@ -52,7 +58,7 @@ export default function BookingEnginePage() {
         <div className="pdp-features-grid">
           {features.map((f, i) => (
             <div key={i} className="pdp-feature-card" style={{ '--card-accent': '#0EA5E9' }}>
-              <div className="pdp-feature-icon">{f.icon}</div>
+              <div className="pdp-feature-icon"><FeatureIcon name={f.iconSvg} color="#0EA5E9" /></div>
               <h3 className="pdp-feature-title">{f.title}</h3>
               <p className="pdp-feature-desc">{f.desc}</p>
             </div>

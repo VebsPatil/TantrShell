@@ -13,15 +13,15 @@ export default function Footer() {
           <div className="footer-col">
             <span className="footer-col-title mono">SERVICES</span>
             <Link to="/solutions">Tech Solutions</Link>
-            <Link to="/training">Training</Link>
+
             <Link to="/products">Products</Link>
-            <Link to="/solutions">Consulting</Link>
+
           </div>
           <div className="footer-col">
             <span className="footer-col-title mono">COMPANY</span>
             <Link to="/about">About</Link>
             <Link to="/careers">Careers</Link>
-            <Link to="/blog">Blog</Link>
+
             <Link to="/contact">Contact</Link>
           </div>
           <div className="footer-col">
