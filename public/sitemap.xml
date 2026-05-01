@@ -2,86 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Pages -->
   <url>
-    <loc>https://tantrshell.com/</loc>
+    <loc>https://tantrshell.online/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/solutions</loc>
+    <loc>https://tantrshell.online/solutions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products</loc>
+    <loc>https://tantrshell.online/products</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/about</loc>
+    <loc>https://tantrshell.online/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/contact</loc>
+    <loc>https://tantrshell.online/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/careers</loc>
+    <loc>https://tantrshell.online/careers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Legal & Info Pages -->
   <url>
-    <loc>https://tantrshell.com/privacy</loc>
+    <loc>https://tantrshell.online/privacy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/terms</loc>
+    <loc>https://tantrshell.online/terms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/cookies</loc>
+    <loc>https://tantrshell.online/cookies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Product Deploy Pages -->
   <url>
-    <loc>https://tantrshell.com/products/hospital-management</loc>
+    <loc>https://tantrshell.online/products/hospital-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products/school-erp</loc>
+    <loc>https://tantrshell.online/products/school-erp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products/ecommerce</loc>
+    <loc>https://tantrshell.online/products/ecommerce</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products/hr-management</loc>
+    <loc>https://tantrshell.online/products/hr-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products/booking-engine</loc>
+    <loc>https://tantrshell.online/products/booking-engine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products/billing</loc>
+    <loc>https://tantrshell.online/products/billing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tantrshell.com/products/crm</loc>
+    <loc>https://tantrshell.online/products/crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
