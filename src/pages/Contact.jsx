@@ -47,7 +47,7 @@ const Contact = () => {
             <div className="contact-form-wrapper">
               <h2>Send Us a Message</h2>
               <p>Fill out the form and we'll get back to you within 24 hours.</p>
-              
+
               {submitted ? (
                 <div className="success-message">
                   <span className="success-icon">✓</span>
@@ -109,14 +109,14 @@ const Contact = () => {
                     <span className="info-icon">📧</span>
                     <div>
                       <span className="info-label">Email</span>
-                      <span className="info-value">hello@tantrshell.com</span>
+                      <span className="info-value">tantrshell.hr@gmail.com</span>
                     </div>
                   </div>
                   <div className="info-item">
                     <span className="info-icon">📞</span>
                     <div>
                       <span className="info-label">Phone</span>
-                      <span className="info-value">+91 98765 43210</span>
+                      <span className="info-value">+91 9356886572</span>
                     </div>
                   </div>
                   <div className="info-item">

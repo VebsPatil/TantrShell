@@ -96,7 +96,7 @@ export default function ContactPage() {
           <span className="accent">●</span>
           <span>RESPONSE: &lt; 24H</span>
           <span className="accent">●</span>
-          <span>hello@tantrshell.com</span>
+          <span>tantrshell.hr@gmail.com</span>
         </div>
       </div>
     </section>
