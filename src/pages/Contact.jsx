@@ -109,7 +109,7 @@ const Contact = () => {
                     <span className="info-icon">📧</span>
                     <div>
                       <span className="info-label">Email</span>
-                      <span className="info-value">tantrshell.hr@gmail.com</span>
+                      <span className="info-value">hr.tantrshell@gmail.com</span>
                     </div>
                   </div>
                   <div className="info-item">
