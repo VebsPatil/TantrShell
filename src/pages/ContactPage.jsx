@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import SEOHead from '../components/SEOHead';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -55,6 +56,29 @@ export default function ContactPage() {
 
   return (
     <section id="contact" className="section section-contact" style={{ paddingTop: '8rem' }}>
+      <SEOHead
+        title="Contact Us — Start Your Project with TantrShell"
+        description="Get in touch with TantrShell to launch your next tech project. We build custom software, ERP systems, AI bots, and more. Response time under 24 hours."
+        keywords="contact TantrShell, hire software developers India, project inquiry, tech consultation, business automation quote, custom software quote, Pune software company contact"
+        canonical="/contact"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tantrshell.online/" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://tantrshell.online/contact" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact TantrShell",
+            "description": "Reach out to start your project or get a free consultation.",
+            "url": "https://tantrshell.online/contact"
+          }
+        ]}
+      />
       <div className="contact-bg-text">TANTRSHELL</div>
       <div className="contact-content visible">
         <span className="section-tag mono">05 // LET'S BUILD</span>
@@ -96,7 +120,7 @@ export default function ContactPage() {
           <span className="accent">●</span>
           <span>RESPONSE: &lt; 24H</span>
           <span className="accent">●</span>
-          <span>hello@tantrshell.com</span>
+          <span>hr.tantrshell@gmail.com</span>
         </div>
       </div>
     </section>

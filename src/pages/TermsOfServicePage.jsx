@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { SectionHeader } from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 
 const sections = [
   {
@@ -84,6 +85,12 @@ export default function TermsOfServicePage() {
 
   return (
     <section id="terms-of-service" className="section section-legal" style={{ paddingTop: '8rem' }}>
+      <SEOHead
+        title="Terms of Service — TantrShell Usage Agreement"
+        description="Read TantrShell's terms of service. Understand your rights, responsibilities, payment terms, intellectual property, and liability when using our products and services."
+        keywords="TantrShell terms of service, usage agreement, client responsibilities, intellectual property, payment terms, SaaS terms, software license, liability, service agreement"
+        canonical="/terms"
+      />
       <SectionHeader tag="LEGAL // TERMS" title="TERMS OF" accentWord="SERVICE" desc="Last updated: April 2026 — Please read these terms carefully before using TantrShell's services." />
 
       <div className="legal-container">

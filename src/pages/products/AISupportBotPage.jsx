@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
 import FeatureIcon from '../../components/FeatureIcon';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhIFQqLm9JCIOKFifKcGHdv1A8S8_YeDDgxzfe4NNIqJ-LKrz9DCAlxkIf-cQpP4AtbOq5E0k6wozngwMs3V1Eq4L0itVuCssCdhzejBn-vSjAJLeB_65n50rddRUMEO7cmxjIhF16dNtfsmjfEMxTggnkujJ_wwbuH5S1i3eJpNgIdlPRMGpUzPIEt5k_axA97t2v9GJkIa-oLG-qJ-eClxSLyrp3caJBnpXBklK9IA6V4w8-wAY2gnzg', alt: 'AI Chat Interface' },
@@ -25,6 +26,21 @@ export default function AISupportBotPage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#8B5CF6', '--product-accent-rgb': '139, 92, 246' }}>
+      <SEOHead
+        title="AI Support Bot — Intelligent Chatbot with Document Analysis"
+        description="TantrShell's AI Support Bot — intelligent chat, document analysis, auto-replies, smart recommendations, analytics & multi-channel deployment. 80% auto-resolution rate."
+        keywords="AI chatbot, support bot, intelligent chatbot, document analysis AI, auto replies, customer support automation, WhatsApp chatbot, LangChain chatbot, OpenAI integration, NLP chatbot India"
+        canonical="/products/ai-support-bot"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell AI Support Bot",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "AI-powered support chatbot with document analysis, auto-replies, and smart recommendations across multiple channels.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.12) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">

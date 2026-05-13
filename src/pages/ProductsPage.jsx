@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { SectionHeader } from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 
 const allProducts = [
   { title: 'Hospital Management', desc: 'Complete patient records, appointments, billing, pharmacy, and lab management system.', category: 'healthcare', status: 'READY', slug: 'hospital-management' },
@@ -42,6 +43,39 @@ export default function ProductsPage() {
 
   return (
     <section id="products" className="section section-products" style={{ paddingTop: '8rem' }}>
+      <SEOHead
+        title="Products — 50+ Ready-to-Deploy Business Software Solutions"
+        description="Browse TantrShell's catalog of 50+ prebuilt, production-ready software products — Hospital ERP, School Management, E-Commerce, CRM, HR Suite, AI Bot & more. Deploy in days."
+        keywords="prebuilt software products, hospital management system, school ERP, e-commerce platform, CRM software, HR management suite, billing software, AI chatbot, booking engine, white-label products, ready-to-deploy software"
+        canonical="/products"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tantrshell.online/" },
+              { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://tantrshell.online/products" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "TantrShell Product Catalog",
+            "description": "50+ prebuilt, production-ready software solutions",
+            "numberOfItems": 8,
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Hospital Management System", "url": "https://tantrshell.online/products/hospital-management" },
+              { "@type": "ListItem", "position": 2, "name": "School ERP System", "url": "https://tantrshell.online/products/school-erp" },
+              { "@type": "ListItem", "position": 3, "name": "E-Commerce Starter", "url": "https://tantrshell.online/products/ecommerce" },
+              { "@type": "ListItem", "position": 4, "name": "HR Management Suite", "url": "https://tantrshell.online/products/hr-management" },
+              { "@type": "ListItem", "position": 5, "name": "Booking Engine", "url": "https://tantrshell.online/products/booking-engine" },
+              { "@type": "ListItem", "position": 6, "name": "Billing & Invoicing", "url": "https://tantrshell.online/products/billing" },
+              { "@type": "ListItem", "position": 7, "name": "CRM Mini-Suite", "url": "https://tantrshell.online/products/crm" },
+              { "@type": "ListItem", "position": 8, "name": "AI Support Bot", "url": "https://tantrshell.online/products/ai-support-bot" }
+            ]
+          }
+        ]}
+      />
       <SectionHeader tag="02 // READY TO DEPLOY" title="PRODUCT" accentWord="CATALOG" desc="50+ prebuilt, production-ready solutions that can be deployed in days, not months." />
       <div className="products-categories visible">
         {categories.map(c => (

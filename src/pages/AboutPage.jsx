@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 /* ── Timeline Data ── */
 const timeline = [
@@ -172,6 +173,35 @@ export default function AboutPage() {
 
   return (
     <div ref={pageRef} className="about-page">
+      <SEOHead
+        title="About Us — Our Story, Mission & Global Impact"
+        description="Founded in 2020 in Pune, India, TantrShell delivers enterprise-grade ERP, CRM, and AI solutions to 200+ clients across India, the US, and the EU. Learn our story."
+        keywords="about TantrShell, tech company Pune, ERP CRM provider India, enterprise software company, digital transformation India, global tech solutions, Akurdi Pune, TantrShell Technologies"
+        canonical="/about"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tantrshell.online/" },
+              { "@type": "ListItem", "position": 2, "name": "About", "item": "https://tantrshell.online/about" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About TantrShell",
+            "description": "Learn about TantrShell's journey from a small office in Akurdi, Pune to serving 200+ clients across three continents.",
+            "url": "https://tantrshell.online/about",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "TantrShell",
+              "foundingDate": "2020",
+              "foundingLocation": "Pune, Maharashtra, India"
+            }
+          }
+        ]}
+      />
       {/* ═══════ HERO ═══════ */}
       <section className="about-hero" data-animate>
         <div className="about-hero-bg-text">ABOUT</div>

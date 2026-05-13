@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
 import FeatureIcon from '../../components/FeatureIcon';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0ugYa9Ycfzc6di5iwDf5K7orc4m5dMj7TIvrrV87RfdqgXCOhkklcW1PKG_cFbFVc1Vtr4twUCB8epZCv4sYfPJ1fmroRaLu-Ult4F_s3tfLIks6zSbGHrHdlP1hitRuNxfuFa_rJX_j4bz4_BjLmz18tSClCrbcpG9fBnDFa0N946AlmXKOcffxxn5ZiG2MsI-2-VpV0UgzaEGd6mhjkbB9SqLDUzD0xvVr0_iAg2ZEi2ve0Sr8tgFKqEY', alt: 'CRM Dashboard' },
@@ -25,6 +26,21 @@ export default function CRMPage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#FF2D55', '--product-accent-rgb': '255, 45, 85' }}>
+      <SEOHead
+        title="CRM Mini-Suite — Lead Management & Sales Pipeline Software"
+        description="TantrShell's CRM Mini-Suite — lead pipeline, communication hub, sales analytics, contact management, deal tracking & email campaigns. 3x conversion boost."
+        keywords="CRM software, lead management, sales pipeline, customer relationship management, contact management, deal tracking, email campaigns, sales analytics, CRM India, small business CRM"
+        canonical="/products/crm"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell CRM Mini-Suite",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "CRM software with lead management, pipeline tracking, customer communication, and sales analytics.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(255,45,85,0.1) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">

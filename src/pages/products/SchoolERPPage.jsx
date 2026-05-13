@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
 import FeatureIcon from '../../components/FeatureIcon';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0uh_GQdfwnnPCJ9S3sS4JzrA8mzLZ6SYyfYCqXovdDhUkP-obYLxfN5f_kG4I0uLd2avZrw0P7ERYnGD_8ArJWEFeu6CtezyJCeKNGl_IhsOfmy6cmF1IE92lc5q9K-Uee-IZO04QQGX1qqMadOuK4tOGu2GceS_3P9gdqicwlZfV3aGMQyoLzuwAdmjlmeUqWZQqgMTCeMVzOvMkfso5m2kX2zD9iaeOmz4w4AX3k6BvizqF3FYl5WUwwU', alt: 'Academic Dashboard' },
@@ -25,6 +26,21 @@ export default function SchoolERPPage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#818CF8', '--product-accent-rgb': '129, 140, 248' }}>
+      <SEOHead
+        title="School ERP System — Complete Academic Management Platform"
+        description="TantrShell's School ERP — student records, attendance tracking, grade management, fee collection, parent portal & timetable engine. K-12 ready. 98% adoption rate."
+        keywords="school ERP system, student management software, attendance tracking, grade management, fee collection software, parent portal, school management system India, education ERP, K-12 software"
+        canonical="/products/school-erp"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell School ERP System",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "description": "Complete school management system with student records, attendance, grading, fees, and parent communication.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(129,140,248,0.12) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">

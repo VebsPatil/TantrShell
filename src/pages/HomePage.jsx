@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import HeroScene from '../components/HeroScene';
+import SEOHead from '../components/SEOHead';
 
 export default function HomePage({ loaded }) {
   useEffect(() => {
@@ -59,6 +60,19 @@ export default function HomePage({ loaded }) {
 
   return (
     <>
+      <SEOHead
+        title="Smart Tech Solutions & Prebuilt Products for Businesses"
+        description="TantrShell builds smart, customizable tech products — ERP, CRM, AI bots, e-commerce — and trains businesses to deploy them fast. 50+ ready products, 200+ clients served."
+        keywords="TantrShell, business tech solutions, prebuilt software products, ERP systems, CRM solutions, AI chatbot, e-commerce platform, SaaS, white-label software, hospital management, school ERP, Pune tech company, India software development, digital transformation"
+        canonical="/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tantrshell.online/" }
+          ]
+        }}
+      />
       {/* Hero */}
       <section id="hero" className="section section-hero">
         <HeroScene />

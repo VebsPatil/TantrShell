@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
 import FeatureIcon from '../../components/FeatureIcon';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0uiEI5X_9Y_CTkoWKjSMK2Blk-qsovaBjzEcKBC9RDQMY4zS7Oc6u4Xf3Mk76tim8inO6kMSJCRfSgmiC5UYqQjcwCM1B_INsQZ0uivMhXbCbDqP-5sgPO1DCKEFhu2QWi5-Tvb9YUQMlmOdrq83qU4ielYLI7gWaCOs4fLmd2FqMoFn7NkPzQZHVI6JR2nkjAw2t6eS8w4WvYlCHNKOyhSzvEcpuWPks8p63SN3GI74gKHJsxWTIN5vHw', alt: 'HR Dashboard' },
@@ -25,6 +26,21 @@ export default function HRManagementPage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#10B981', '--product-accent-rgb': '16, 185, 129' }}>
+      <SEOHead
+        title="HR Management Suite — Complete People Operations Platform"
+        description="TantrShell's HR Management Suite — employee directory, payroll processing, leave management, performance reviews, recruitment pipeline & HR analytics. ISO 27001 ready."
+        keywords="HR management software, employee management system, payroll software India, leave management, performance review software, recruitment pipeline, HRMS, human resource management, PF ESI compliance"
+        canonical="/products/hr-management"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell HR Management Suite",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "Complete HR management system with payroll, leave management, performance reviews, and recruitment.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(16,185,129,0.12) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">

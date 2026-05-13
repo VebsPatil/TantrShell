@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { SectionHeader } from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 
 const sections = [
   {
@@ -61,6 +62,12 @@ export default function PrivacyPolicyPage() {
 
   return (
     <section id="privacy-policy" className="section section-legal" style={{ paddingTop: '8rem' }}>
+      <SEOHead
+        title="Privacy Policy — How TantrShell Protects Your Data"
+        description="Read TantrShell's privacy policy. Learn how we collect, use, and protect your personal information when you use our services, products, and website."
+        keywords="TantrShell privacy policy, data protection, personal information, data security, GDPR, cookie policy, user rights, data collection"
+        canonical="/privacy"
+      />
       <SectionHeader tag="LEGAL // PRIVACY" title="PRIVACY" accentWord="POLICY" desc="Last updated: April 2026 — Your privacy matters to us. This policy explains how TantrShell collects, uses, and protects your information." />
 
       <div className="legal-container">

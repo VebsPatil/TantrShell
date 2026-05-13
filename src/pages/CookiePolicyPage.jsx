@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { SectionHeader } from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 
 const cookieTypes = [
   {
@@ -67,6 +68,12 @@ export default function CookiePolicyPage() {
 
   return (
     <section id="cookie-policy" className="section section-legal" style={{ paddingTop: '8rem' }}>
+      <SEOHead
+        title="Cookie Policy — How TantrShell Uses Cookies & Tracking"
+        description="Learn how TantrShell uses cookies and tracking technologies. Understand the types of cookies we use, their purpose, and how to manage your preferences."
+        keywords="TantrShell cookie policy, cookies, tracking technologies, essential cookies, performance cookies, marketing cookies, cookie management, web tracking"
+        canonical="/cookies"
+      />
       <SectionHeader tag="LEGAL // COOKIES" title="COOKIE" accentWord="POLICY" desc="Last updated: April 2026 — This policy explains how TantrShell uses cookies and similar tracking technologies." />
 
       <div className="legal-container">

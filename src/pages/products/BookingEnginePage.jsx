@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
 import FeatureIcon from '../../components/FeatureIcon';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0ujc9qlFFeLie9dR89ILUDi5sFKUZOo4ea_eNvRCZ1egyfDiTWcG9eCG7yEn5DgZnngDvihasCOCeagtczAZ8LQAeKu2CnTN5WsNH8RWnwgKej2FruBz65XLSTBfCfu4JK8q7wDEirUk6yv5kvcWnjNIomMbV4pVkFs4qM9B9KaQhNOA2a3MWXT-cciiHPLE1RORoww1fLAo3BwDqdOrJKJUFm0O0aTYFBupBoaMxqd1j6CwLaAYLcysnQ0', alt: 'Booking Dashboard' },
@@ -25,6 +26,21 @@ export default function BookingEnginePage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#0EA5E9', '--product-accent-rgb': '14, 165, 233' }}>
+      <SEOHead
+        title="Booking Engine — Online Appointment Scheduling System"
+        description="TantrShell's Booking Engine — smart calendar, auto notifications, payment integration, client management & revenue analytics. 60% no-show reduction. Setup in 5 minutes."
+        keywords="booking engine software, appointment scheduling system, online booking platform, salon booking software, clinic appointment system, service booking app, calendar booking widget, Razorpay Stripe booking"
+        canonical="/products/booking-engine"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell Booking Engine",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "Multi-service appointment booking system with smart calendar, notifications, and payment integration.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(14,165,233,0.12) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">

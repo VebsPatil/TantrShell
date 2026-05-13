@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SectionHeader } from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 
 const services = [
   {
@@ -46,6 +47,30 @@ export default function SolutionsPage() {
 
   return (
     <>
+      <SEOHead
+        title="Solutions — Custom Tech, AI Integration & Business Automation"
+        description="Explore TantrShell's core services: custom web apps, CRM systems, AI integration, prebuilt ERP products, and white-label SaaS solutions. From idea to scale."
+        keywords="business tech solutions, custom software development, AI integration, CRM systems, web applications, prebuilt ERP, white-label SaaS, business automation, agile development, IT consulting India"
+        canonical="/solutions"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tantrshell.online/" },
+              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://tantrshell.online/solutions" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Business Technology Solutions",
+            "provider": { "@type": "Organization", "name": "TantrShell" },
+            "areaServed": ["India", "United States", "European Union"],
+            "description": "Custom software development, AI integration, business automation, prebuilt ERP products, and white-label SaaS solutions."
+          }
+        ]}
+      />
       <section id="solutions" className="section section-services" style={{ paddingTop: '8rem' }}>
         <SectionHeader tag="01 // WHAT WE BUILD" title="CORE" accentWord="SERVICES" desc="From idea to scale, TantrShell delivers high-performance software, AI-powered systems, and scalable platforms that accelerate business growth." />
         <div className="services-grid visible">

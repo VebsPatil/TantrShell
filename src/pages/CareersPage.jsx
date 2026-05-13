@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { SectionHeader } from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 
 const perks = [
   { icon: '◆', title: 'Remote-First', desc: 'Work from anywhere — home, café, or co-working space. We care about output, not office hours.' },
@@ -90,6 +91,20 @@ export default function CareersPage() {
 
   return (
     <section id="careers" className="section section-careers" style={{ paddingTop: '8rem' }}>
+      <SEOHead
+        title="Careers — Join TantrShell & Build the Future of Tech"
+        description="Join TantrShell's remote-first team. Open roles in engineering, AI/ML, design, DevOps, and business development. Competitive pay, equity options, and unlimited PTO."
+        keywords="TantrShell careers, tech jobs Pune, remote developer jobs India, AI engineer jobs, UI UX designer jobs, full stack developer jobs, DevOps engineer, startup jobs India, software company careers"
+        canonical="/careers"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tantrshell.online/" },
+            { "@type": "ListItem", "position": 2, "name": "Careers", "item": "https://tantrshell.online/careers" }
+          ]
+        }}
+      />
       <SectionHeader tag="TEAM // JOIN US" title="BUILD THE" accentWord="FUTURE" desc="We're looking for passionate builders who thrive on challenges and want to create technology that transforms businesses." />
 
       {/* Culture Intro */}

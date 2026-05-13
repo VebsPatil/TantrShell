@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0uhpCc-9zOLray3zmcAbur5LPlWEEozDs8V3rHfbkJFRLWRfRCPqjYlb5bxAxSg6DXfGFtskrcDE5YhCyMeBPD7F4MGOF8v_5fETtdqbCKS7FpTsETXWx-sxErgd3EuC2XpeeFBe6sKChiJ7oUzFcHf-qIrZ1ECmyQJ2ycZzwCBtRz2OPO0axQFezIz247F8q1Nz4WXorCv3OtOdaYeOdfFjMlE2GGlFvK18unNQc0K7XAhClc_WkhMUQA', alt: 'Clinical Dashboard' },
@@ -24,6 +25,22 @@ export default function HospitalManagementPage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#00CED1', '--product-accent-rgb': '0, 206, 209' }}>
+      <SEOHead
+        title="Hospital Management System — Complete Healthcare ERP"
+        description="Deploy TantrShell's Hospital Management System — patient records, appointments, billing, pharmacy, lab integration & analytics. HIPAA compliant. 99.9% uptime."
+        keywords="hospital management system, healthcare ERP, patient records software, clinic management, pharmacy management, lab integration, HIPAA compliant software, medical billing software, hospital ERP India"
+        canonical="/products/hospital-management"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell Hospital Management System",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "description": "Complete hospital management system with patient records, appointments, billing, pharmacy, and lab management.",
+          "offers": { "@type": "Offer", "category": "Custom Pricing" },
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       {/* Hero */}
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(0,206,209,0.12) 0%, transparent 60%)' }} />

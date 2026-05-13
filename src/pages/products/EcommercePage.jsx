@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
 import FeatureIcon from '../../components/FeatureIcon';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui2BsjoPUndToE7aidIXs3--X0Qutn8K1JgZfF3q3Rvziw5lxsyrckZItn-F2Ua9TxocVKWR0tDrpCYcvDQ49HTE5SO2HtE3DUIKBF1-DH6rXY60ORPNAG0mcfCsBrhlb5-ymaAvgH7iwRjP3hXPdD6UzOXkh9tQLHDySB1H70V0awSkeLENrOG1xFpu_k2WXq5J6G6DX_lZ3iqFUmcB7SE5jlLNGLOfRyDnmrd9dhEEcgAL4AR1Wt7sWs', alt: 'Admin Dashboard' },
@@ -25,6 +26,21 @@ export default function EcommercePage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#FF8F00', '--product-accent-rgb': '255, 143, 0' }}>
+      <SEOHead
+        title="E-Commerce Platform — Launch Your Online Store Fast"
+        description="TantrShell's E-Commerce Starter — product catalog, payment gateway, inventory control, order pipeline, analytics & customer management. PCI DSS compliant."
+        keywords="e-commerce platform, online store software, shopping cart, payment gateway integration, inventory management, Stripe Razorpay, e-commerce starter kit, online shop builder India"
+        canonical="/products/ecommerce"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell E-Commerce Starter",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "Full-featured e-commerce platform with product catalog, payment gateway, inventory control, and order management.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(255,143,0,0.12) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">

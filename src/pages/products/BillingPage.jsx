@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageSlider from '../../components/ImageSlider';
+import SEOHead from '../../components/SEOHead';
 
 const screenshots = [
   { src: 'https://lh3.googleusercontent.com/aida/ADBb0ui_H2Xwwv-iqye_TcZ6Bhq5MMFne4SdBDmvRCmR0t4rIscccxhl-hOhNDrkMm8MTqPotDxIUIvd94gISyE3XUNC8Msm_aVjh-z9ZAwRgNoH9d1z_nh-EFWQq8ZpKsMHBfuL_Jq1azEWp5W6j7zQWqPNOCKQsIl1OvMQIlVM98RIK8rQ7BlINdkUrNG_ELlCgN-CswvQLy2WbCa9qECSPlqzDLr6AcruSmMBRbBhxtWlC354RntwLpi0lIE', alt: 'Billing Dashboard' },
@@ -24,6 +25,21 @@ export default function BillingPage() {
 
   return (
     <div className="product-deploy-page" style={{ '--product-accent': '#FFD700', '--product-accent-rgb': '255, 215, 0' }}>
+      <SEOHead
+        title="Billing & Invoicing Software — GST Compliant Financial Tool"
+        description="TantrShell's Billing & Invoicing — auto invoicing, GST tax engine, payment tracking, financial reports, recurring billing & multi-currency support. 100% GST compliant."
+        keywords="billing software, invoicing software India, GST billing, automated invoicing, payment tracking, financial reporting, recurring billing, multi-currency invoicing, tax calculation software, Tally integration"
+        canonical="/products/billing"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TantrShell Billing & Invoicing",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "description": "Automated invoicing and billing system with GST compliance, payment tracking, and financial reporting.",
+          "provider": { "@type": "Organization", "name": "TantrShell" }
+        }}
+      />
       <section className="pdp-hero">
         <div className="pdp-hero-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(255,215,0,0.1) 0%, transparent 60%)' }} />
         <div className="pdp-hero-content">
