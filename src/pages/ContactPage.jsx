@@ -88,16 +88,20 @@ export default function ContactPage() {
           <div className="form-row">
             <div className="form-group">
               <label className="mono">NAME</label>
-              <input type="text" name="from_name" placeholder="Your name" required />
+              <input type="text" name="user_name" placeholder="Your name" required />
             </div>
             <div className="form-group">
               <label className="mono">EMAIL</label>
-              <input type="email" name="from_email" placeholder="your@email.com" required />
+              <input type="email" name="user_email" placeholder="your@email.com" required />
             </div>
           </div>
           <div className="form-group">
-            <label className="mono">PROJECT TYPE</label>
-            <select name="project_type">
+            <label className="mono">PHONE</label>
+            <input type="tel" name="phone" placeholder="+91 98765 43210" />
+          </div>
+          <div className="form-group">
+            <label className="mono">SERVICE</label>
+            <select name="service">
               <option value="">Select a service</option>
               <option value="Business Tech Solution">Business Tech Solution</option>
               <option value="Prebuilt Product">Prebuilt Product</option>

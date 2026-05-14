@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import MathCanvas from '../components/MathCanvas';
 import { useScrollReveal } from '../hooks/useScrollAnimation';
 import './Contact.css';
@@ -13,10 +14,37 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setSending(true);
+    setError('');
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        user_name:  formData.name,
+        user_email: formData.email,
+        phone:      formData.phone,
+        company:    formData.company,
+        service:    formData.service,
+        message:    formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+        setTimeout(() => setSubmitted(false), 4000);
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        setError('Something went wrong. Please try again or email us directly.');
+      })
+      .finally(() => setSending(false));
   };
 
   const faqs = [
@@ -94,8 +122,18 @@ const Contact = () => {
                     <label htmlFor="message">Message *</label>
                     <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your project..." rows={5} required></textarea>
                   </div>
-                  <button type="submit" className="btn btn-primary btn-lg submit-btn" id="submit-form">
-                    Send Message <span>→</span>
+                  {error && (
+                    <p style={{ color: '#ff6b6b', marginTop: '0.5rem', fontSize: '0.9rem' }}>
+                      ⚠ {error}
+                    </p>
+                  )}
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg submit-btn"
+                    id="submit-form"
+                    disabled={sending}
+                  >
+                    {sending ? 'Sending…' : <>Send Message <span>→</span></>}
                   </button>
                 </form>
               )}
