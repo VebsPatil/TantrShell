@@ -6,7 +6,7 @@ import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', company: '', service: '', message: '',
+    name: '', email: '', phone: '', service: '', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -29,7 +29,6 @@ const Contact = () => {
         user_name:  formData.name,
         user_email: formData.email,
         phone:      formData.phone,
-        company:    formData.company,
         service:    formData.service,
         message:    formData.message,
       },
@@ -37,7 +36,7 @@ const Contact = () => {
     )
       .then(() => {
         setSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
         setTimeout(() => setSubmitted(false), 4000);
       })
       .catch((err) => {
@@ -94,15 +93,9 @@ const Contact = () => {
                       <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@company.com" required />
                     </div>
                   </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="phone">Phone</label>
-                      <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="company">Company</label>
-                      <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company" />
-                    </div>
+                  <div className="form-group">
+                    <label htmlFor="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="service">Service Interested In</label>
