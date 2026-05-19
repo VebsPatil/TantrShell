@@ -1,8 +1,20 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/((?!api|_next|static).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "http://tantrshell.online/(.*)",
+      "destination": "https://tantrshell.online/$1",
+      "permanent": true
+    },
+    {
+      "source": "https://www.tantrshell.online/(.*)",
+      "destination": "https://tantrshell.online/$1",
+      "permanent": true
     }
   ]
 }
