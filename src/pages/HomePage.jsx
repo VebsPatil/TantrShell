@@ -186,19 +186,6 @@ export default function HomePage({ loaded }) {
           </div>
         </div>
       </section>
-
-      {/* Marquee */}
-      <div className="about-marquee">
-        <div className="marquee-inner">
-          {['STARTUPS', 'LOCAL BUSINESSES', 'CLINICS', 'SCHOOLS', 'MANUFACTURERS', 'RESTAURANTS', 'RETAILERS', 'NGOS', 'AGENCIES', 'FREELANCERS',
-            'STARTUPS', 'LOCAL BUSINESSES', 'CLINICS', 'SCHOOLS', 'MANUFACTURERS', 'RESTAURANTS', 'RETAILERS', 'NGOS', 'AGENCIES', 'FREELANCERS']
-            .map((item, i) => (
-              <React.Fragment key={i}>
-                <span>{item}</span><span className="dot">●</span>
-              </React.Fragment>
-            ))}
-        </div>
-      </div>
     </>
   );
 }

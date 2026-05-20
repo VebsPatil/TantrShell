@@ -95,7 +95,7 @@ const Training = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/contact" className="btn btn-primary btn-lg">Apply for Internship</Link>
+              <Link to="/internship" className="btn btn-primary btn-lg">Apply for Internship</Link>
             </div>
             <div className="intern-visual">
               <div className="intern-visual-bg"></div>

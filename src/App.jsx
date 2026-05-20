@@ -16,6 +16,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
 import CareersPage from './pages/CareersPage';
+import InternshipPage from './pages/InternshipPage';
 
 
 /* Product Deploy Pages */
@@ -55,6 +56,7 @@ function App() {
           <Route path="/terms" element={<TermsOfServicePage />} />
           <Route path="/cookies" element={<CookiePolicyPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/internship" element={<InternshipPage />} />
 
 
           {/* Product Deploy Pages */}

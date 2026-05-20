@@ -232,8 +232,8 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="about-hero-coords mono">
-          <span>LAT: 18.6501° N</span>
-          <span>LONG: 73.7568° E</span>
+          <span>LAT: 18.6456° N</span>
+          <span>LONG: 73.7665° E</span>
         </div>
       </section>
 
@@ -393,19 +393,14 @@ export default function AboutPage() {
         <div className="about-office-content" data-animate>
           <div className="about-office-card">
             <div className="about-office-map-placeholder">
-              <div className="about-office-pin">
-                <div className="about-office-pin-dot" />
-                <div className="about-office-pin-ring" />
-              </div>
-              <div className="about-office-grid-lines">
-                {[...Array(6)].map((_, i) => (
-                  <div key={i} className="about-grid-line-h" style={{ top: `${(i + 1) * 14.28}%` }} />
-                ))}
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="about-grid-line-v" style={{ left: `${(i + 1) * 11.11}%` }} />
-                ))}
-              </div>
-              <div className="about-office-label mono">AKURDI, PUNE</div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.5511689984453!2d73.76649548248672!3d18.645617970555545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0a3a60ab5f46e5%3A0x72b4dd064923a434!2sTantrShell!5e0!3m2!1sen!2sin!4v1779293520550!5m2!1sen!2sin"
+                className="about-office-map-iframe"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="TantrShell Location"
+              />
             </div>
             <div className="about-office-details">
               <h3>TantrShell Technologies</h3>
@@ -415,7 +410,7 @@ export default function AboutPage() {
                 <p>Pune, Maharashtra, India</p>
               </div>
               <div className="about-office-coords mono">
-                <span>18.6501° N, 73.7568° E</span>
+                <span>18.6456° N, 73.7665° E</span>
               </div>
               <Link to="/contact" className="btn btn-primary" id="about-contact-cta">
                 GET IN TOUCH →
@@ -424,23 +419,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* ═══════ MARQUEE ═══════ */}
-      <div className="about-marquee">
-        <div className="marquee-inner">
-          {[
-            'STARTUPS', 'MANUFACTURERS', 'CLINICS', 'SCHOOLS', 'RESTAURANTS',
-            'RETAILERS', 'NGOS', 'AGENCIES', 'HOSPITALS', 'LOGISTICS',
-            'STARTUPS', 'MANUFACTURERS', 'CLINICS', 'SCHOOLS', 'RESTAURANTS',
-            'RETAILERS', 'NGOS', 'AGENCIES', 'HOSPITALS', 'LOGISTICS',
-          ].map((item, i) => (
-            <React.Fragment key={i}>
-              <span>{item}</span>
-              <span className="dot">●</span>
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

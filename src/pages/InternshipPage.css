@@ -1,0 +1,514 @@
+/* ==========================================================
+   INTERNSHIP PAGE — TantrShell Premium Dark Futurity Theme
+   ========================================================== */
+
+/* ── Container Alignment & Layout Boundaries ── */
+.internship-page-wrapper .container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+.internship-page-wrapper .section {
+  min-height: auto;
+  padding: 3.5rem 0;
+}
+
+.internship-page-wrapper .section-header {
+  margin-bottom: 2rem;
+}
+
+/* ── Entrance Animations ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intern-detail-card,
+.intern-role-card,
+.intern-activity-card,
+.intern-benefit-card,
+.internship-cta-block {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intern-detail-card.visible,
+.intern-role-card.visible,
+.intern-activity-card.visible,
+.intern-benefit-card.visible,
+.internship-cta-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero Section ── */
+.internship-hero-section {
+  padding: 7.5rem 0 3.5rem;
+  background: radial-gradient(circle at top right, rgba(255, 77, 0, 0.08), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(0, 212, 255, 0.04), transparent 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.internship-hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 77, 0, 0.15), transparent);
+}
+
+.internship-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  color: var(--primary);
+  border: 1px solid rgba(255, 77, 0, 0.3);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.12em;
+  background: rgba(255, 77, 0, 0.05);
+}
+
+.hero-main-title {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800;
+  color: var(--on-bg);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtext {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--on-surface-variant);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* ── Internship Details Section ── */
+.internship-details-section {
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.internship-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intern-detail-card {
+  background: var(--surface);
+  border: 1px solid rgba(173, 137, 126, 0.15);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.intern-detail-card:hover {
+  border-color: var(--primary);
+  background: var(--surface-low);
+  box-shadow: 0 0 20px rgba(255, 77, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.detail-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--outline);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--on-bg);
+}
+
+/* ── Roles Section ── */
+.internship-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: 2rem;
+}
+
+.intern-role-card {
+  background: var(--surface);
+  border: 1px solid rgba(173, 137, 126, 0.15);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.intern-role-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.intern-role-card:hover::after {
+  opacity: 1;
+}
+
+.intern-role-card:hover {
+  transform: translateY(-4px);
+  background: var(--surface-low);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(255, 77, 0, 0.08);
+}
+
+.role-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.role-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.role-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--on-bg);
+}
+
+.role-desc {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.role-tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  background: var(--surface-low);
+  color: var(--primary-dim);
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(255, 77, 0, 0.15);
+  letter-spacing: 0.05em;
+}
+
+.role-card-cta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.role-card-cta:hover {
+  color: var(--primary-container);
+  transform: translateX(4px);
+}
+
+/* ── What You Will Do Section ── */
+.internship-do-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: 2rem;
+}
+
+.intern-activity-card {
+  background: var(--surface);
+  border: 1px solid rgba(173, 137, 126, 0.1);
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.intern-activity-card:hover {
+  background: var(--surface-low);
+  border-color: rgba(255, 77, 0, 0.25);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+  transform: translateY(-2px);
+}
+
+.activity-index {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.activity-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--on-bg);
+  margin-bottom: 0.4rem;
+}
+
+.activity-desc {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+}
+
+/* ── Benefits Section ── */
+.internship-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: 2rem;
+}
+
+.intern-benefit-card {
+  background: var(--surface);
+  border: 1px solid rgba(173, 137, 126, 0.12);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.intern-benefit-card:hover {
+  transform: translateY(-4px);
+  background: var(--surface-low);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(255, 77, 0, 0.08);
+}
+
+.benefit-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(255, 77, 0, 0.08), rgba(173, 137, 126, 0.05));
+  border: 1px solid rgba(255, 77, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  transition: transform 0.3s var(--ease-out), background-color 0.3s ease;
+}
+
+.intern-benefit-card:hover .benefit-icon-wrapper {
+  transform: scale(1.08) rotate(4deg);
+  background: linear-gradient(135deg, rgba(255, 77, 0, 0.15), rgba(173, 137, 126, 0.10));
+  border-color: var(--primary);
+}
+
+.benefit-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.benefit-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--on-bg);
+  margin-bottom: 0.6rem;
+}
+
+.benefit-desc {
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+}
+
+/* ── Bottom CTA Block ── */
+.internship-cta-section {
+  padding-bottom: 4rem;
+}
+
+.internship-cta-block {
+  background: var(--surface);
+  border: 1px solid rgba(255, 77, 0, 0.15);
+  padding: 3.5rem 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.internship-cta-block:hover {
+  border-color: rgba(255, 77, 0, 0.35);
+}
+
+.internship-cta-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 77, 0, 0.08), transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(0, 212, 255, 0.03), transparent 40%);
+  pointer-events: none;
+}
+
+.cta-subtitle {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--on-bg);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.cta-desc {
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  color: var(--on-surface-variant);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  opacity: 0.85;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.desktop-only {
+  display: block;
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 1240px) {
+  .internship-page-wrapper .container {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+}
+
+@media (max-width: 1024px) {
+  .internship-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .internship-page-wrapper .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .internship-hero-section {
+    padding: 6.5rem 0 2.5rem;
+  }
+  
+  .internship-details-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .internship-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .internship-do-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .intern-activity-card {
+    padding: 1.5rem;
+  }
+  
+  .internship-cta-block {
+    padding: 2.5rem 1.25rem;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .internship-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .intern-role-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ── SVG Logo Icons Styling ── */
+.detail-icon svg,
+.role-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+  stroke: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.intern-detail-card:hover .detail-icon svg,
+.intern-role-card:hover .role-icon svg {
+  transform: scale(1.1);
+}

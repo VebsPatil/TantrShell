@@ -42,9 +42,25 @@ const SOCIAL_LINKS = [
 ];
 
 export default function Footer() {
+  const marqueeItems = [
+    'STARTUPS', 'LOCAL BUSINESSES', 'CLINICS', 'SCHOOLS', 'MANUFACTURERS', 'RESTAURANTS', 'RETAILERS', 'NGOS', 'AGENCIES', 'FREELANCERS',
+    'STARTUPS', 'LOCAL BUSINESSES', 'CLINICS', 'SCHOOLS', 'MANUFACTURERS', 'RESTAURANTS', 'RETAILERS', 'NGOS', 'AGENCIES', 'FREELANCERS'
+  ];
+
   return (
-    <footer id="main-footer">
-      <div className="footer-top">
+    <>
+      <div className="about-marquee">
+        <div className="marquee-inner">
+          {marqueeItems.map((item, i) => (
+            <React.Fragment key={i}>
+              <span>{item}</span>
+              <span className="dot">●</span>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+      <footer id="main-footer">
+        <div className="footer-top">
         <div className="footer-brand">
           <span className="footer-logo">TANTR<span className="accent">SHELL</span></span>
           <p className="mono">Smart, customizable tech products.<br />Built for businesses that mean it.</p>
@@ -77,6 +93,7 @@ export default function Footer() {
             <span className="footer-col-title mono">COMPANY</span>
             <Link to="/about">About</Link>
             <Link to="/careers">Careers</Link>
+            <Link to="/internship">Internship</Link>
             <Link to="/contact">Contact</Link>
           </div>
           <div className="footer-col">
@@ -107,5 +124,6 @@ export default function Footer() {
         <span className="mono footer-tagline">PERFORMANCE IS CULTURE //</span>
       </div>
     </footer>
+    </>
   );
 }
