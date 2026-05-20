@@ -7,5 +7,18 @@
       "source": "/:path*",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tantrshell.online"
+        }
+      ],
+      "destination": "https://tantrshell.online/:path*",
+      "permanent": true
+    }
   ]
 }
